@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalized Joke Generator</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>😂 Joke Generator</h1>
+      <p class="subtitle">Get a personalized joke just for you!</p>
+      
+      <% if (error) { %>
+        <div class="error-message">
+          ⚠️ <%= error %>
+        </div>
+      <% } %>
+      
+      <form action="/joke" method="POST" class="joke-form">
+        <div class="form-group">
+          <label for="name">What's your name?</label>
+          <input 
+            type="text" 
+            id="name"
+            name="name" 
+            placeholder="Enter your name (e.g., Sarah, Mike)" 
+            required
+            class="input-field"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="category">Choose a joke category:</label>
+          <select name="category" id="category" class="input-field">
+            <option value="Any">Any (Surprise me!)</option>
+            <option value="Programming">Programming</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+            <option value="Pun">Pun</option>
+            <option value="Spooky">Spooky</option>
+            <option value="Christmas">Christmas</option>
+          </select>
+        </div>
+        
+        <button type="submit" class="btn">Get My Joke! 🎉</button>
+      </form>
+      
+      <div class="info">
+        <p>💡 Enter your name and pick a category to get a personalized joke!</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

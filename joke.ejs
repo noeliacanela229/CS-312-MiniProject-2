@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Joke</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card joke-card">
+      <div class="greeting">
+        <h1>Hey <%= name %>! 👋</h1>
+        <p class="subtitle">Here's a <span class="category-badge"><%= category %></span> joke just for you!</p>
+      </div>
+      
+      <div class="joke-section">
+        <div class="joke-icon">😄</div>
+        
+        <div class="joke-content">
+          <p class="joke-text"><%= jokeText %></p>
+          
+          <% if (punchline) { %>
+            <div class="punchline-container">
+              <button class="reveal-btn" onclick="revealPunchline()">
+                Click for Punchline! 🎭
+              </button>
+              <p class="punchline hidden" id="punchline">
+                <%= punchline %>
+              </p>
+            </div>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="reaction-section">
+        <p class="reaction-text">Did you laugh?</p>
+        <div class="reaction-buttons">
+          <button class="reaction-btn laugh" onclick="showReaction('😂')">😂 Hilarious!</button>
+          <button class="reaction-btn meh" onclick="showReaction('😐')">😐 Meh</button>
+          <button class="reaction-btn groan" onclick="showReaction('🤦')">🤦 Dad Joke</button>
+        </div>
+        <p class="reaction-result" id="reactionResult"></p>
+      </div>
+      
+      <a href="/" class="btn back-btn">Get Another Joke! 🔄</a>
+    </div>
+  </div>
+
+  <script>
+    function revealPunchline() {
+      const punchline = document.getElementById('punchline');
+      const btn = document.querySelector('.reveal-btn');
+      
+      punchline.classList.remove('hidden');
+      punchline.style.animation = 'fadeIn 0.5s ease-in';
+      btn.style.display = 'none';
+    }
+
+    function showReaction(emoji) {
+      const result = document.getElementById('reactionResult');
+      const messages = {
+        '😂': 'Glad you enjoyed it!',
+        '😐': 'Tough crowd! Let\'s get you another one.',
+        '🤦': 'Classic dad joke material! 😄'
+      };
+      
+      result.textContent = `${emoji} ${messages[emoji]}`;
+      result.style.animation = 'fadeIn 0.3s ease-in';
+    }
+  </script>
+</body>
+</html>
