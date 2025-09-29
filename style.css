@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #3b5f16 0%, #137911 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@ select.input-field {
 }
 
 .btn {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #3b5f16 0%, #3b5f16 100%);
   color: white;
   padding: 15px 30px;
   border: none;
@@ -143,7 +143,7 @@ select.input-field {
 }
 
 .category-badge {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #3b5f16 0%, #3b5f16 100%);
   color: white;
   padding: 5px 15px;
   border-radius: 20px;
@@ -205,13 +205,13 @@ select.input-field {
 
 .punchline {
   font-size: 1.3em;
-  color: #f5576c;
+  color: #3b5f16;
   font-weight: 600;
   margin-top: 20px;
   padding: 20px;
   background: white;
   border-radius: 10px;
-  border-left: 4px solid #f5576c;
+  border-left: 4px solid #3b5f16;
 }
 
 .hidden {
